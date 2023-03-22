@@ -1,5 +1,9 @@
 <script>
   import Header from './Header.svelte'
+  import Home from './+page.svelte'
+  import About from './about/+page.svelte'
+  import Sverdle from './sverdle/+page.svelte'
+  import { page } from "$app/stores";
   import './styles.css'
 </script>
 
@@ -7,7 +11,14 @@
   <Header />
 
   <main>
-    <slot />
+    {#if $page.url.hash === "/"}
+    {:else if $page.url.hash === "#/"}
+    <Home/>
+    {:else if $page.url.hash === "#/about"}
+    <About/>
+    {:else if $page.url.hash === "#/sverdle"}
+    <Sverdle/>
+    {/if}
   </main>
 
   <footer>
