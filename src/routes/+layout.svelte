@@ -5,6 +5,18 @@
 
   import Header from './Header.svelte'
   import './styles.css'
+  import {beforeNavigate,goto} from '$app/navigation';
+  import { building } from '$app/environment';
+
+  // if(building){
+    // beforeNavigate((navigation)=>{
+    //   const target = navigation.to.route.id
+    //   if(!target.endsWith('html')){
+    //     const new
+    //   }
+      
+    // })
+  // }
 </script>
 
 <div class="app">
