@@ -2,6 +2,7 @@
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import {base} from '$app/paths'
 </script>
 
 <svelte:head>
@@ -13,8 +14,8 @@
 	<h1>
 		<span class="welcome">
 			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
+				<source srcset={base}{welcome} type="image/webp" />
+				<img src={base}{welcome_fallback} alt="Welcome" />
 			</picture>
 		</span>
 

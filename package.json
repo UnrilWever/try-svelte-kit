@@ -13,13 +13,29 @@
 		"@neoconfetti/svelte": "^1.0.0",
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/adapter-static": "^2.0.1",
-		"@sveltejs/kit": "^1.5.0",
+		"@sveltejs/kit": "^1.13.0",
 		"@types/cookie": "^0.5.1",
+		"@vitejs/plugin-legacy": "^4.0.2",
+		"abortcontroller-polyfill": "^1.7.5",
+		"custom-event-polyfill": "^1.0.7",
 		"htmlparser2": "^8.0.2",
+		"intersection-observer": "^0.12.2",
+		"path-composedpath-polyfill": "^0.0.1",
+		"proxy-polyfill": "^0.3.2",
+		"regenerator-runtime": "^0.13.11",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
+		"terser": "^5.16.6",
 		"typescript": "^4.9.3",
-		"vite": "^4.0.0"
+		"unorm": "^1.6.0",
+		"vite": "^4.0.0",
+		"whatwg-fetch": "^3.6.2"
 	},
-	"type": "module"
+	"type": "module",
+	"browserslist": [
+		"> 0.05% and not ie < 11 and not safari < 10 and not chrome < 14",
+		"ie >= 11",
+		"chrome >= 14",
+		"safari >= 10"
+	]
 }

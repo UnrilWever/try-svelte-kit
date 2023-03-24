@@ -1,4 +1,8 @@
 <script>
+  // Loading first polyfills that are shared between for legacy&modern browsers.
+  import 'abortcontroller-polyfill';
+  import 'intersection-observer';
+
   import Header from './Header.svelte'
   import './styles.css'
 </script>
