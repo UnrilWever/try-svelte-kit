@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import { binRun } from './utils.js'
 
 const htmlFilePaths = []
 
@@ -20,13 +21,19 @@ function modifyHtml(content) {
   //修改内容
   const regex = /<link[^>]*href="[^"]*\.js"[^>]*>/gi
   const newHtml = content.replace(regex, '')
-  return content
+  return newHtml
 }
 
 readDir('./build')
 
 for (const filePath of htmlFilePaths) {
   const fileContent = fs.readFileSync(filePath, 'utf-8')
-  const modifyContent = modifyHtml(fileContent)
+  const modifiedContent = modifyHtml(fileContent)
   fs.writeFileSync(filePath, modifiedContent)
+  //最后顺便格式化一下代码
+  try {
+    await binRun('pnpm', ['prettier', '--write', filePath])
+  } catch (error) {
+    console.error('格式化失败,错误信息:', error)
+  }
 }
